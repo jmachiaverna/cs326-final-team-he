@@ -1,0 +1,12 @@
+## TeamName 
+Team He
+## Application Name 
+Music Matcher
+## Team Overview 
+* Stanley Araki: StanleyAraki
+* Nicholas CHafy: nchafy
+* Joseph Machiaverna: jmachiaverna
+## Innovative Idea 
+Our project, Music Matcher, is a service that lets users share their music recommendations with each other. It is inspired by ours and other people's struggles of not having enough music to listen to and not having recommendations for music from others. Similar to <u>Twitter</u>, there will be a 'timeline' feature that shows the recommendations from other users. Users can create a profile for themselves with information like musical preferences, playlists, and other informations on it. Similar to how <u>Spotify</u> users can share links with a playable audio clip, we will also aim to have this feature on the timeline. This way, users will be able to more easily listen to music recommended by people they follow. People can also share entire playlists too. Our service hopes to fulfill needs of people who are looking for music recommended by others, while also hoping to popularize lesser known styles/genres of music like bossa nova. Make music sharing easier through our service!
+## Important Components 
+Some components of our final project are UIs like user profiles and timelines, a short audio clip feature for recommended songs/playlists, and some commenting/liking features to the recommendations. For the UI component, there will be a user profile interface that contains information like recommended playlist, genre their interested, songs they're playing most at the moment, and many more. Then, we have a timeline feature that shows recommendations from people the user follows, similar to how the Twitter timeline works. Each recommmendation on the timeline will be playable in a short clip, such that users can easily listen to them and decide whether they'd like to continue listening to it on services like Spotify or Apple Music. For the actual music recommendations, it will be similar to posts on instagram. It can include a short clip of the actual song(s), and our project will allow some commenting and liking features for more interactivity between users. Besides these, there will be other components like user authentication and authorization when creating accounts and user profiles. For users with newly created accounts that don't follow anyone else, our service can ask them for music genres they're interested in to recommend some users or songs to them to help them get started.  
