@@ -1,0 +1,74 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    --musicmatcher-color: #e5a2e7;
+    --musicmatcher-background: #f3f2f5;
+}
+
+.sidebarOption {
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+}
+
+.sidebarOption .material-icons, 
+.fa-spotify {
+    padding: 20px;
+}
+
+.siderbarOption h2 {
+    font-weight: 800;
+    font-size: 20px;
+    margin-right: 20px;
+}
+
+.sidebarOption:hover {
+    background-Color: var(--musicmatcher-background);
+    border-radius: 30px;
+    color: var(--musicmatcher-color);
+    transition: color 100ms ease-out;
+}
+
+.sidebarOption.active{
+    color: var(--musicmatcher-color);
+}
+
+.sidebar_share {
+    width: 100%;
+    background-color: var(--musicmatcher-color);
+    border: none;
+    color: white;
+    font-weight: 900;
+    border-radius: 30px;
+    height: 50px;
+    margin-top: 20px;
+}
+
+body {
+    display: flex;
+    height: 100vh;
+    max-width: 1300px;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 0 10px;    
+}
+
+.siderbar {
+    border-right: 1px solid var(--musicmatcher-background);
+    flex: 0.2;
+    min-width: 250px;
+    margin-top: 20px;
+    padding-left: 200px;
+    padding-right: 200px;
+}
+
+/* TO ENLARGE ACCOUNT PROFILE */
+
+/* .fa-twitter {
+    color: var(--musicmatcher-color);
+    font-size: 30px;
+} */

@@ -1,40 +1,69 @@
-<!-- TUTORIAL FROM: https://www.w3schools.com/bootstrap/  -->
 <!DOCTYPE html>
-<html lang="en">
+<html lang=""en">
 <head>
-  <title>Bootstrap Example</title>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
-  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+    <meta charset="UTF-8">
+    <meta http-equiv=""X-UA-Compatible" content=""IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MusicMatcher</title>
+
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link rel="stylesheet" 
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css" 
+    integrity="sha512-xh6O/CkQoPOWDdYTDqeRdPCVd1SpvCA9XXcUnZS2FmJNp1coAFzvtCN9BmamE+4aHK8yyUHUSCcJHgXloTyT2A==" 
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="styles.css">
 </head>
 <body>
+    <!-- sidebar starts-->
+    <div class="sidebar">
+        <div class="sidebarOption active">
+            <span class="material-icons"> home</span>
+            <h2>Home</h2>
+        </div>
 
-<div class="jumbotron text-center">
-  <h1>My First Bootstrap Page</h1>
-  <p>Resize this responsive page to see the effect!</p> 
-</div>
-  
-<div class="container">
-  <div class="row">
-    <div class="col-sm-4">
-      <h3>Column 1</h3>
-      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit...</p>
-      <p>Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris...</p>
-    </div>
-    <div class="col-sm-4">
-      <h3>Column 2</h3>
-      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit...</p>
-      <p>Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris...</p>
-    </div>
-    <div class="col-sm-4">
-      <h3>Column 3</h3>        
-      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit...</p>
-      <p>Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris...</p>
-    </div>
-  </div>
-</div>
+        <div class="sidebarOption">
+            <span class="material-icons"> search </span>
+            <h2>Search</h2>
+        </div>
 
+        <div class="sidebarOption">
+            <span class="material-icons">
+                account_circle
+            </span>
+            <h2>Profile</h2>
+        </div>
+
+        <div class="sidebarOption">
+            <span class="material-icons">
+                remember_me
+            </span>
+            <h2>User ID</h2>
+        </div>
+
+        <div class="sidebarOption">
+            <i class='fab fa-spotify'></i>
+            <h2>Spotify Account</h2>
+        </div>
+
+        <div class="sidebarOption">
+            <span class="material-icons">
+                featured_play_list
+            </span>
+            <h2>Playlist</h2>
+        </div>
+
+        <div class="sidebarOption">
+            <span class="material-icons">
+                play_circle
+            </span>
+            <h2>Favorite Song</h2>
+        </div>
+
+        <button class="sidebar_share">Share a song or playlist!</button>
+
+    </div>
+
+    
+    <!--sidebar ends-->
 </body>
 </html>
