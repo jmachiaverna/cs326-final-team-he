@@ -1,20 +1,329 @@
-<!-- TUTORIAL FROM: https://www.w3schools.com/bootstrap/  -->
 <!DOCTYPE html>
-<html lang="en">
+<html lang=""en">
 <head>
-  <title>MusicMatcher</title>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
-  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+    <meta charset="UTF-8">
+    <meta http-equiv=""X-UA-Compatible" content=""IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MusicMatcher</title>
+
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link rel="stylesheet" 
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css" 
+    integrity="sha512-xh6O/CkQoPOWDdYTDqeRdPCVd1SpvCA9XXcUnZS2FmJNp1coAFzvtCN9BmamE+4aHK8yyUHUSCcJHgXloTyT2A==" 
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="styles.css">
 </head>
 <body>
+    <!-- sidebar starts-->
+    <div class="sidebar">
+        <div class="sidebarOption">
+            <span class="material-icons" style="font-size:80px;">
+                account_circle
+            </span>
+        </div>
+        <div class="profile">
+            <h2>Profile</h2>
+            <p>lorem</p>
+        </div>
 
-<div class = "jumbotron text-center">
-    <h1>MusicMatcher</h1>
-    <p>Welcome to MusicMatcher!</p>
-</div>
+        <div class="sidebarOption">
+            <span class="material-icons">
+                remember_me
+            </span>
+        </div>
+        <div class="user_id">
+            <h2>User ID</h2>
+            <p>lorem</p>
+        </div>
+
+        <div class="sidebarOption">
+            <i class='fab fa-spotify' style="font-size:25px;"></i>
+        </div>
+        <div class="spotify">
+            <h2>Spotify</h2>
+            <p>lorem</p>
+        </div>
+
+        <div class="sidebarOption">
+            <span class="material-icons">
+                featured_play_list
+            </span>
+        </div>
+        <div class="playlist">
+            <h2>Playlist</h2>
+            <p>lorem</p>
+        </div>
+
+        <div class="sidebarOption">
+            <span class="material-icons">
+                play_circle
+            </span>
+        </div>
+        <div class="favorite_song">
+            <h2>Favorite Song</h2>
+            <p>lorem</p>
+        </div>
+
+        <button class="sidebar_share">Share a song or playlist!</button>
+
+    </div>
+    <!--sidebar ends-->
+
+    <!--feed starts-->
+    <div class="feed">
+        <div class="feed_header">
+            <h2>Home</h2>
+        </div>
+
+        <div class="shareBox">
+            <form>
+                <div class="sharebox_input">
+                    <span class="material-icons" id="userProfileShare" style="font-size:60px;">
+                        account_circle
+                    </span>
+                    <input type="text" placeholder="Share a song or playlist!">
+                </div>
+                <div class="sharebox_play_button">
+                    <span class="material-icons" style="font-size:50px">
+                        play_circle
+                    </span>
+                </div>
+                <button class="sharebox_shareButton">share!</button>
+            </form>
+        </div>
+
+
+        <!-- post starts here -->
+        <div class="post">
+            <div class="post_avatar">
+                <span class="material-icons" id="userProfileShare" style="font-size:45px;">
+                    account_circle
+                </span>
+            </div>
+
+            <div class="post_body">
+                <div class="post_header">
+                    <div class="post_headerText">
+                        <h3>
+                            USER
+                            <span class="post_headerSpecial">
+                                <span class="material-icons post_badge">verified</span> @USERID
+                            </span>
+                        </h3>
+                    </div>
+                    <div class="post_headerDescription">
+                        <p>
+                            Lorem ipsum dolor sit amet, consectetu adipisicing elit.
+                        </p>
+                    </div>
+                </div>
+                
+                <div class="post_add_music">
+                    <span class="material-icons" style="font-size:30px;">
+                        play_circle_filled
+                    </span>
+                </div>
+
+                <div class="post_footer">
+                    <span class="material-icons"> repeat </span>
+                    <span class="material-icons"> favorite_border </span>
+                    <span class="material-icons"> publish </span>
+                </div>
+            </div>
+            
+        </div>
+
+        <div class="post">
+            <div class="post_avatar">
+                <span class="material-icons" id="userProfileShare" style="font-size:45px;">
+                    account_circle
+                </span>
+            </div>
+
+            <div class="post_body">
+                <div class="post_header">
+                    <div class="post_headerText">
+                        <h3>
+                            USER
+                            <span class="post_headerSpecial">
+                                <span class="material-icons post_badge">verified</span> @USERID
+                            </span>
+                        </h3>
+                    </div>
+                    <div class="post_headerDescription">
+                        <p>
+                            Lorem ipsum dolor sit amet, consectetu adipisicing elit.
+                        </p>
+                    </div>
+                </div>
+                
+                <div class="post_add_music">
+                    <span class="material-icons" style="font-size:30px;">
+                        play_circle_filled
+                    </span>
+                </div>
+
+                <div class="post_footer">
+                    <span class="material-icons"> repeat </span>
+                    <span class="material-icons"> favorite_border </span>
+                    <span class="material-icons"> publish </span>
+                </div>
+            </div>
+            
+        </div>
+
+        <div class="post">
+            <div class="post_avatar">
+                <span class="material-icons" id="userProfileShare" style="font-size:45px;">
+                    account_circle
+                </span>
+            </div>
+
+            <div class="post_body">
+                <div class="post_header">
+                    <div class="post_headerText">
+                        <h3>
+                            USER
+                            <span class="post_headerSpecial">
+                                <span class="material-icons post_badge">verified</span> @USERID
+                            </span>
+                        </h3>
+                    </div>
+                    <div class="post_headerDescription">
+                        <p>
+                            Lorem ipsum dolor sit amet, consectetu adipisicing elit.
+                        </p>
+                    </div>
+                </div>
+                
+                <div class="post_add_music">
+                    <span class="material-icons" style="font-size:30px;">
+                        play_circle_filled
+                    </span>
+                </div>
+
+                <div class="post_footer">
+                    <span class="material-icons"> repeat </span>
+                    <span class="material-icons"> favorite_border </span>
+                    <span class="material-icons"> publish </span>
+                </div>
+            </div>
+            
+        </div>
+
+        <div class="post">
+            <div class="post_avatar">
+                <span class="material-icons" id="userProfileShare" style="font-size:45px;">
+                    account_circle
+                </span>
+            </div>
+
+            <div class="post_body">
+                <div class="post_header">
+                    <div class="post_headerText">
+                        <h3>
+                            USER
+                            <span class="post_headerSpecial">
+                                <span class="material-icons post_badge">verified</span> @USERID
+                            </span>
+                        </h3>
+                    </div>
+                    <div class="post_headerDescription">
+                        <p>
+                            Lorem ipsum dolor sit amet, consectetu adipisicing elit.
+                        </p>
+                    </div>
+                </div>
+                
+                <div class="post_add_music">
+                    <span class="material-icons" style="font-size:30px;">
+                        play_circle_filled
+                    </span>
+                </div>
+
+                <div class="post_footer">
+                    <span class="material-icons"> repeat </span>
+                    <span class="material-icons"> favorite_border </span>
+                    <span class="material-icons"> publish </span>
+                </div>
+            </div>
+            
+        </div>
+        <!-- post ends here -->
+
+    </div>
+    <!--feed ends-->
+
+    <!-- widget starts here -->
+    <div class="widgets">
+        <div class="widgets_input">
+            <span class="material-icons widgets_searchIcon"> search </span>
+            <input type="text" placeholder="search!">
+        </div>
+
+        <div class="widgets_widgetContainer">
+            <h2>Friends & Favorite Songs</h2> 
+            <div class="friend">
+                <div class="friend_avatar">
+                    <span class="material-icons" id="userProfileShare" style="font-size:30px;">
+                        account_circle
+                    </span>
+                </div>
+                <div class="friend_profile">
+                    <h3>
+                        USER
+                        <span class="friend_headerSpecial">
+                            <span class="material-icons post_badge">verified</span> @USERID
+                        </span>
+                    </h3>
+                    <div class="friend_favorite_song">
+                        <p>lorem ipsum</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="friend">
+                <div class="friend_avatar">
+                    <span class="material-icons" id="userProfileShare" style="font-size:30px;">
+                        account_circle
+                    </span>
+                </div>
+                <div class="friend_profile">
+                    <h3>
+                        USER
+                        <span class="friend_headerSpecial">
+                            <span class="material-icons post_badge">verified</span> @USERID
+                        </span>
+                    </h3>
+                    <div class="friend_favorite_song">
+                        <p>lorem ipsum</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="friend">
+                <div class="friend_avatar">
+                    <span class="material-icons" id="userProfileShare" style="font-size:30px;">
+                        account_circle
+                    </span>
+                </div>
+                <div class="friend_profile">
+                    <h3>
+                        USER
+                        <span class="friend_headerSpecial">
+                            <span class="material-icons post_badge">verified</span> @USERID
+                        </span>
+                    </h3>
+                    <div class="friend_favorite_song">
+                        <p>lorem ipsum</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        
+    </div>
+    <!-- widget ends here -->
 
 </body>
 </html>

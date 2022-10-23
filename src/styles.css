@@ -1,0 +1,317 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    --musicmatcher-color: #e5a2e7;
+    --musicmatcher-background: #f3f2f5;
+}
+
+.sidebarOption {
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+    margin: auto;
+    width: 40%;
+}
+
+.sidebarOption .material-icons, 
+.fa-spotify {
+    padding: 20px;
+}
+
+.siderbarOption h2 {
+    font-weight: 800;
+    font-size: 20px;
+    margin-right: 20px;
+}
+
+.sidebarOption:hover {
+    background-Color: var(--musicmatcher-background);
+    border-radius: 30px;
+    color: var(--musicmatcher-color);
+    transition: color 100ms ease-out;
+}
+
+.sidebarOption.active{
+    color: var(--musicmatcher-color);
+}
+
+.sidebar_share {
+    width: 100%;
+    background-color: var(--musicmatcher-color);
+    border: none;
+    color: white;
+    font-weight: 900;
+    border-radius: 30px;
+    height: 50px;
+    margin-top: 20px;
+}
+
+body {
+    display: flex;
+    height: 100vh;
+    max-width: 1300px;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 0 10px;    
+}
+
+.siderbar {
+    border-right: 1px solid var(--musicmatcher-background);
+    flex: 0.2;
+    min-width: 250px;
+    margin-top: 20px;
+    padding-left: 200px;
+    padding-right: 200px;
+}
+
+.profile {
+    margin: auto;
+    width: 50%;
+    padding: 10px;
+}
+
+.user_id {
+    margin: auto;
+    width: 50%;
+    padding: 10px;
+}
+
+.spotify {
+    margin: auto;
+    width: 50%;
+    padding: 10px;
+}
+
+.playlist {
+    margin: auto;
+    width: 50%;
+    padding: 10px;
+}
+
+.favorite_song {
+    margin: auto;
+    width: 50%;
+    padding: 10px;
+}
+
+/* TO ENLARGE ACCOUNT PROFILE */
+
+/* .fa-twitter {
+    color: var(--musicmatcher-color);
+    font-size: 30px;
+} */
+
+.feed {
+    flex: 0.5;
+    border-right: 1px solid var(--musicmatcher-background);
+    min-width: fit-content;
+    overflow-y: scroll;
+}
+
+.feed_header {
+    position: sticky;
+    top: 0;
+    background-color: white;
+    z-index: 100;
+    border: 1px solid var(--musicmatcher-background);
+    padding: 15px 20px;
+}
+
+.feed_header h2 {
+    font-size: 20px;
+    font-weight: 800;
+}
+
+.feed::-webkit-scrollbar {
+    display: none;
+}
+
+.feed {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+}
+
+.sharebox_input span{
+    border-radius: 50px;
+    height: 40px;
+}
+
+.shareBox {
+    padding-bottom: 10px;
+    border-bottom: 8px solid var(--musicmatcher-background);
+    padding-right: 10px;
+}
+
+.shareBox form {
+    display: flex;
+    flex-direction: column;
+}
+
+.sharebox_input {
+    display: flex;
+    padding: 20px;
+}
+
+.sharebox_input input {
+    flex: 1;
+    margin-left: 20px;
+    font-size: 20px;
+    border: none;
+    outline: none;
+}
+
+.sharebox_play_button{
+    margin-left: 500px;
+}
+
+.sharebox_shareButton {
+    background-color: var(--musicmatcher-color);
+    border: none;
+    color: white;
+    font-weight: 900;
+    border-radius: 30px;
+    width: 80px;
+    height: 40px;
+    margin-top: 20px;
+    margin-left: auto;
+}
+
+/*Styling posts*/
+
+.post_avatar span{
+    border-radius: 50%;
+    height: 40px;
+}
+
+.post {
+    display: flex;
+    align-items: flex-start;
+    border-bottom: 1px solid var(--musicmatcher-background);
+    padding-bottom: 10px;
+}
+
+.post_body img{ /* Used for shared music formatting */
+    width: 450px;
+    object-fit: contain;
+    border-radius: 20px;
+}
+
+.post_footer {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 10px;
+}
+
+.post_badge {
+    font-size: 14px !important;
+    color: var(--musicmatcher-color);
+    margin-right: 5px;
+}
+
+.post_headerSpecial {
+    font-weight: 600;
+    font-size: 12px;
+    color: gray;
+}
+
+.post_headerText h3 {
+    font-size: 15px;
+    margin-bottom: 5px;
+}
+
+.post_headerDescription {
+    margin-bottom: 10px;
+    font-size: 15px;
+}
+
+.post_body {
+    flex: 1;
+    padding: 10px;
+}
+
+/* .post_add_music span {
+    margin-left: 400px;
+} */
+
+.post_avatar {
+    padding: 20px;
+}
+
+/* widgets */
+.widgets {
+    flex: 0.3;
+}
+
+.widgets_input {
+    display: flex;
+    align-items: center;
+    background-color: var(--musicmatcher-background);
+    padding: 10px;
+    border-radius: 20px;
+    margin-top: 10px;
+    margin-left: 20px;
+}
+
+.widgets_input input {
+    border: none;
+    background-color: var(--musicmatcher-background);
+    outline: none;
+}
+
+.widgets_searchIcon {
+    color: gray;
+}
+
+.widgets_widgetContainer {
+    margin-top: 15px;
+    margin-left: 20px;
+    padding: 20px;
+    background-color: rgb(245, 231, 243);
+    border-radius: 20px;
+}
+
+.widgets_widgetContainer h2 {
+    font-size: 18px;
+    font-weight: 800;
+}
+
+.friend_headerSpecial {
+    font-weight: 600;
+    font-size: 8px;
+    color: gray;
+}
+
+.friend {
+    display: flex;
+    align-items: flex-start;
+    padding-bottom: 10px;
+    font-size: 10px;
+    margin-bottom: 5px;
+    margin-top: 10px;
+}
+
+.friend_avatar {
+    border-radius: 50%;
+    height: 40px;
+    padding: 10px;
+    margin-top: 10px;
+}
+
+.friend_song {
+    margin-bottom: 10px;
+    font-size: 15px;
+    margin-top: 10px;
+}
+
+.friend h3 {
+    margin-top: 10px;
+}
+
+.friend_favorite_song {
+    margin-top: 5px;
+    font-size: 12px;
+}
