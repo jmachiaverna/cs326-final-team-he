@@ -241,6 +241,88 @@ body {
     padding: 20px;
 }
 
+/* add friends button */
+
+.add_friends {
+    display: flex;
+    align-items: flex-start;
+    border-bottom: 1px solid var(--musicmatcher-background);
+    padding-bottom: 10px;
+    flex: 1;
+    padding: 10px;
+}
+
+.addButton { /* Used for shared music formatting */
+    width: 500px;
+    object-fit: contain;
+    border-radius: 20px;
+    padding: 10px;
+    color: white;
+    border-color: var(--musicmatcher-background);
+    background-color: var(--musicmatcher-color);
+}
+
+.rec_footer {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 10px;
+}
+
+.rec_headerText h3 {
+    font-size: 15px;
+    margin-bottom: 5px;
+    color: var(--musicmatcher-color);
+}
+
+.rec_headerDescription {
+    margin-bottom: 10px;
+    font-size: 15px;
+}
+
+.rec_body {
+    flex: 1;
+    padding: 10px;
+    padding-left: 90px;
+}
+
+/* recommendations */
+
+.rec {
+    display: flex;
+    align-items: flex-start;
+    border-bottom: 1px solid var(--musicmatcher-background);
+    padding-bottom: 10px;
+}
+
+.rec_body img{ /* Used for shared music formatting */
+    width: 450px;
+    object-fit: contain;
+    border-radius: 20px;
+    padding: 10px
+}
+
+.rec_footer {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 10px;
+}
+
+.rec_headerText h3 {
+    font-size: 15px;
+    margin-bottom: 5px;
+    color: var(--musicmatcher-color);
+}
+
+.rec_headerDescription {
+    margin-bottom: 10px;
+    font-size: 15px;
+}
+
+.rec_body {
+    flex: 1;
+    padding: 10px;
+    padding-left: 90px;
+}
 /* widgets */
 .widgets {
     flex: 0.3;
@@ -314,4 +396,59 @@ body {
 .friend_favorite_song {
     margin-top: 5px;
     font-size: 12px;
+}
+/* account registration styling */
+.form_header {
+    position: sticky;
+    /* top: 0; */
+    background-color: var(--musicmatcher-color);
+    border-bottom: 2px solid var(--musicmatcher-background);
+
+    /* z-index: 100; */
+    padding: 15px 100px;
+}
+.form{
+    flex: 0.5;
+    border-right: 1px solid var(--musicmatcher-background);
+    min-width: fit-content;
+    overflow-y: scroll;
+}
+.form::-webkit-scrollbar {
+    display: none;
+}
+.form-group {
+    padding: 10px;
+}
+.form-group label {
+    display: flex;
+    font-size: 20px;
+    font-weight: 800;
+    background-color: var(--musicmatcher-background);
+}
+.form-group input {
+    align-items: center;
+    padding: 5px;
+    border-radius: 20px;
+    border-color: white;
+    background-color: var(--musicmatcher-background);
+    outline: none;
+    margin-top: 10px;
+    margin-left: 20px;
+}
+
+.form-search {
+    display: flex;
+    align-items: center;
+    background-color: var(--musicmatcher-background);
+    padding: 10px;
+    border-radius: 20px;
+    margin: 10px;
+    margin-right: 100px;
+}
+
+.form-search input {
+    border: none;
+    background-color: var(--musicmatcher-background);
+    outline: none;
+
 }
