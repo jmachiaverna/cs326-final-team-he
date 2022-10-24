@@ -22,6 +22,6 @@ Some components of our final project are UIs like user profiles and timelines, a
 Stanley Araki: Worked on creating mainview in the wireframe, as well as implementing the mainview in HTML/CSS implementation.
 Organized Github structure and added data interactions, wireframe screenshots to this document(doc/milestone1.md).  
 
-Nicholas Chafy:
+Nicholas Chafy: Worked on mainview variations and profile setup in wireframe. Added non-post components to the mainview feed in HTML/CSS Implementation. Implemented the initial account creation html/css.
 
 Joseph Machiaverna: 
