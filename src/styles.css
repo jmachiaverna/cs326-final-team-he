@@ -441,9 +441,12 @@ body {
   /* top: 0; */
   background-color: var(--musicmatcher-color);
   border-bottom: 2px solid var(--musicmatcher-background);
-
-  /* z-index: 100; */
-  padding: 15px 100px;
+  z-index: 100;
+  padding: 50px 10px;
+  text-align: center;
+}
+.form_header {
+    font-size: xx-large;
 }
 .form {
   flex: 0.5;
@@ -461,7 +464,8 @@ body {
   display: flex;
   font-size: 20px;
   font-weight: 800;
-  background-color: var(--musicmatcher-background);
+  margin-left: 25px;
+  /* background-color: var(--musicmatcher-background); */
 }
 .form-group input {
   align-items: center;
