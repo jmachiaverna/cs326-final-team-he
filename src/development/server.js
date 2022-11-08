@@ -60,7 +60,67 @@ function readChirp() {
  * UPDATE ENDPOINT
  */
 
+/**
+ * 
+ * @param {JSON} json: some json to update 
+ * @param {string} key: the key in the object to update 
+ * @param {*} value: the new value
+ * @returns 
+ */
+function updateJSON(json, key, value) {
+    if (!(key in json)) {
+        throw new Error('key not in JSON');
+    } else {
+        json[key] = value;
+    }
+    return json;
+}
+/**
+ * Updates a specific profile using updateJSON
+ * @param {JSON} profile 
+ * @param {string} key 
+ * @param {*} value 
+ */
+function updateProfile(profile, key, value) {
+    return updateJSON(profile, key, value);
+}
+
+/**
+ * Updates a specific chirp using updateJSON
+ * @param {JSON} chirp: the chirp to update 
+ * @param {string} key: the field of the chirp we are updating
+ * @param {*} value: the vaue of that we are updating the field to
+ * @returns the updated JSON chirp
+ */
+function updateChirp(chirp, key, value) {
+    return updateJSON(chirp, key, value);
+}
 
 /**
  * DELETE ENDPOINT
  */
+
+/**
+ * Deletes a given json object from the database. If the object does not exist, throws an error
+ * @param {JSON[]} database: the database of JSON objects to delete from 
+ * @param {JSON} json: the json object to delete
+ */
+function deleteJSON(database, json) {
+    let delSuccess = false;
+    database.forEach((obj, i) => {
+        if (obj === json) {
+            delSuccess = true;
+            delete database[i]
+        }});
+    if (!delSuccess) {
+        throw new Error('deletion failed, did not find object json in databse');
+    }
+}
+
+function deleteProfile(profileDB, profile) {
+    deleteJSON(profileDB, profile);
+}
+
+function deleteChirp(chirpDB, chirp) {
+    deleteJSON(chirpDB, chirp);
+}
