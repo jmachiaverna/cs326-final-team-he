@@ -14,7 +14,7 @@ Example of user information retreived:
         favorite_song: "www.spotify.com/...",
         favorite_genre: "lorem ipsum",
         favorite_artist: "lorem ipsum",
-        friends: {
+        friends: [
             {
                 user_name: "Stanley",
                 details: {
@@ -29,7 +29,7 @@ Example of user information retreived:
                     ...
                 }
             }
-        }
+        ]
     }
 }
 
