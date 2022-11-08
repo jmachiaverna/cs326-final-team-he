@@ -19,7 +19,7 @@ import { faker } from '@faker-js/faker';
  * Used generally to retreive data regarding the user
  * @return {JSON} Returns json object
  */
-function readProfile() {
+function getProfile() {
     return {
         spotify_account: faker.internet.domainName(),
         playlist: faker.internet.domainName(),
@@ -44,7 +44,7 @@ function readProfile() {
  * Reads a specific chirp whenever it is clicked on for more information by a user
  * @return {JSON} Returns json object containing data like content, shared music, like count, comments
  */
-function readChirp() {
+function getChirp() {
     return {
         user_name: faker.name.fullName(),
         chirp_text: faker.lorem.paragraph(2),
@@ -61,39 +61,48 @@ function readChirp() {
  */
 
 /**
+ * Function representing the put functionality of REST api. Idempotent, creates new object if id does not exist, 
+ * updates existing one if it does.
  * 
- * @param {JSON} json: some json to update 
- * @param {string} key: the key in the object to update 
- * @param {*} value: the new value
- * @returns 
+ * @param {JSON[]} database the database we're putting obj with id into
+ * @param {number} id the id (key) of the object we're updating
+ * @param {JSON} obj the data with updated content
+ * @returns a response code based on what the result was. 200 for update, 202 for creation
  */
-function updateJSON(json, key, value) {
-    if (!(key in json)) {
-        throw new Error('key not in JSON');
+function putJSON(database, id, obj) {
+    //if object does not exist in database yet, create it
+    const index = database.findIndex(elem => elem['id'] === id);
+    let code = 200;
+    if (index === -1) {
+        console.log('created new object with id: ' + id);
+        database.push({'id': id, 'json': json});
+        code = 202;
     } else {
-        json[key] = value;
+        database[i]['id']['json'] = obj;
     }
-    return json;
+
+    return code;
 }
 /**
- * Updates a specific profile using updateJSON
- * @param {JSON} profile 
- * @param {string} key 
- * @param {*} value 
+ * Updates a specific profile using putJSON
+ * @param {JSON[]} profileDB: database of profiles
+ * @param {number} id: id of specific profile
+ * @param {JSON} profile: the updated profile content
+ * @returns: response code based on result
  */
-function updateProfile(profile, key, value) {
-    return updateJSON(profile, key, value);
+function putProfile(profileDB, id, profile) {
+    return putJSON(profileDB, id, profile);
 }
 
 /**
- * Updates a specific chirp using updateJSON
- * @param {JSON} chirp: the chirp to update 
- * @param {string} key: the field of the chirp we are updating
- * @param {*} value: the vaue of that we are updating the field to
- * @returns the updated JSON chirp
+ * Updates a specific chirp using putJSON
+ * @param {JSON[]} profileDB: database of chirps
+ * @param {number} id: id of specific chirp
+ * @param {JSON} profile: the updated chirp content
+ * @returns: response code based on result
  */
-function updateChirp(chirp, key, value) {
-    return updateJSON(chirp, key, value);
+function putChirp(chirpDB, id, chirp) {
+    return putJSON(chirpDB, id, chirp);
 }
 
 /**
@@ -103,24 +112,36 @@ function updateChirp(chirp, key, value) {
 /**
  * Deletes a given json object from the database. If the object does not exist, throws an error
  * @param {JSON[]} database: the database of JSON objects to delete from 
- * @param {JSON} json: the json object to delete
+ * @param {number} id: the id of the object you want to delete
+ * @returns: the corresponding code (whether the delete was successful or not)
  */
-function deleteJSON(database, json) {
-    let delSuccess = false;
-    database.forEach((obj, i) => {
-        if (obj === json) {
-            delSuccess = true;
-            delete database[i]
-        }});
-    if (!delSuccess) {
-        throw new Error('deletion failed, did not find object json in databse');
+function deleteJSON(database, id) {
+    let code = database.findIndex(elem => elem['id'] === id);
+    if (code === -1) {
+        return code;
+    } else {
+        database.splice(code, 1);
+        code = 200;
     }
+    return code;
 }
 
-function deleteProfile(profileDB, profile) {
-    deleteJSON(profileDB, profile);
+/**
+ * Deletes a profile with id using
+ * @param {JSON[]} profileDB: the database of profiles to delete from 
+ * @param {number} id: the id of the profile you want to delete
+ * @returns: the corresponding code (whether the delete was successful or not)
+ */
+function deleteProfile(profileDB, id) {
+    return deleteJSON(profileDB, id);
 }
 
-function deleteChirp(chirpDB, chirp) {
-    deleteJSON(chirpDB, chirp);
+/**
+ * 
+ * @param {JSON[]} chirpDB: the database of chirps to delete from 
+ * @param {number} id: the id of the chirp 
+ * @returns: corresponding response code
+ */
+function deleteChirp(chirpDB, id) {
+    return deleteJSON(chirpDB, id);
 }
