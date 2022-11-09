@@ -1,4 +1,4 @@
-import { faker } from '@faker-js/faker';
+const faker = require ('@faker-js/faker');
 
 /**
  * We will be adding APIs on server side here
@@ -145,3 +145,21 @@ function deleteProfile(profileDB, id) {
 function deleteChirp(chirpDB, id) {
     return deleteJSON(chirpDB, id);
 }
+
+
+
+/**
+ * Server calls
+ */
+
+const express = require('express');
+const app = express();
+const port = 3000;
+
+app.get('/', (req, res) => {
+    res.send("Hello World!");
+});
+
+app.listen(port, () => {
+    console.log(`Example app listening on port ${port}`);
+})
