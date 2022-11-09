@@ -21,22 +21,22 @@ const faker = require ('@faker-js/faker');
  */
 function getProfile() {
     return {
-        spotify_account: faker.internet.domainName(),
-        playlist: faker.internet.domainName(),
-        favorite_song: faker.music.songName(),
-        favorite_genre: faker.music.genre(),
-        favorite_artist: faker.name.fullName(),
+        spotify_account: faker.faker.internet.domainName(),
+        playlist: faker.faker.internet.domainName(),
+        favorite_song: faker.faker.music.songName(),
+        favorite_genre: faker.faker.music.genre(),
+        favorite_artist: faker.faker.name.fullName(),
         friends: [
             {
-                user_name: faker.name.fullName(),
+                user_name: faker.faker.name.fullName(),
                 details: {
-                    favorite_song: faker.music.songName(),
+                    favorite_song: faker.faker.music.songName(),
                     recent_shared: {
-                        shared_song: faker.music.songName()
+                        shared_song: faker.faker.music.songName()
                     }
                 }
             }
-        ]
+        ],
     };
 }
 
@@ -46,12 +46,12 @@ function getProfile() {
  */
 function getChirp() {
     return {
-        user_name: faker.name.fullName(),
-        chirp_text: faker.lorem.paragraph(2),
-        shared_song_name: faker.music.songName(),
-        shared_song: faker.internet.domainName(),
-        like_count: faker.datatype.number(1000),
-        share_count: faker.datatype.number(1000)
+        user_name: faker.faker.name.fullName(),
+        chirp_text: faker.faker.lorem.paragraph(2),
+        shared_song_name: faker.faker.music.songName(),
+        shared_song: faker.faker.internet.domainName(),
+        like_count: faker.faker.datatype.number(1000),
+        share_count: faker.faker.datatype.number(1000)
     };
 }
 
@@ -156,22 +156,36 @@ const express = require('express');
 const app = express();
 const port = 3000;
 
-app.get('/', (req, res) => {
-    res.send("Hello World!");
+app.use(express.json()); // Middleware allows us to use JSON
+
+// request is incoming data, response is outgoing data
+
+app.get('/', (req, res) => { // For READ
+    res.send("Got a GET request at /user");
 });
 
-app.post('/', (req, res) => {
+app.get('/profile', (req, res) => { // Request to get profile
+    const result = getProfile();
+    res.send(result);
+});
+
+app.get('/chirp', (req, res) => {
+    const result = getProfile();
+    res.send(result);
+});
+
+app.post('/', (req, res) => { // For CREATE
     res.send("Got a POST request");
 });
 
-app.put('/', (req, res) => {
+app.put('/', (req, res) => { // For UPDATE
     res.send("Got a PUT request at /user");
 });
 
-app.delete('/', (req, res) => {
+app.delete('/', (req, res) => { // For DELETE
     res.send("Got a DELETE request at /user");
 });
 
 app.listen(port, () => {
-    console.log(`Example app listening on port ${port}`);
-})
+    console.log(`Server listening on port ${port}`);
+});
