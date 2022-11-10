@@ -79,5 +79,5 @@ set_profile(profileJson);
 const feedJson = await get_feed();
 set_feed(feedJson);
 const addButton = document.getElementById('addButton');
-addButton.addEventListener('click', () => )
+addButton.addEventListener('click', () => add_friend(profileJson, friendJson));
 console.log("FINISHED LOADING");
