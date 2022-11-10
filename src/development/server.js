@@ -232,7 +232,7 @@ app.put('/', (req, res) => { // For UPDATE
 });
 
 //PUT request for user (editing a profile) SHOULD NOT BE USED FOR CREATING A USER
-app.put('/user', (req, res) => {
+app.put('/profile', (req, res) => {
     const { id, profile } = req.params;
     const status = putProfile(profiledb, id, profile);
     res.status(status);
@@ -260,7 +260,7 @@ app.put('/chirp', (req, res) => {
 });
 
 //DELETE request for user (delete profile)
-app.delete('/user', (req, res) => { // For DELETE
+app.delete('/profile', (req, res) => { // For DELETE
     const { id } = req.params;
     const status = deleteProfile(profiledb, id);
     res.status(status).send("Got a DELETE request at /user");

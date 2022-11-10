@@ -57,12 +57,27 @@ function set_feed(chirp_json) {
     document.getElementById("u1_chirp").innerHTML = chirp_json.chirp_text;
 }
 
+function add_friend(profile_json, friend_json) {
+    const friend =             
+    {
+        user_name: friend_json.user_name,
+        user_id: friend_json.user_id,
+        favorite_song: friend_json.favorite_song,
+        recent_shared: {
+            shared_song: faker.faker.music.songName()
+        }
+    }
+    profile_json.friends.push(friend);
+    set_profile(profile_json);
+}
 // On load call
 
 const profileJson = await get_profile();
+const friendJson = await get_profile();
 set_profile(profileJson);
 
 const feedJson = await get_feed();
 set_feed(feedJson);
-
+const addButton = document.getElementById('addButton');
+addButton.addEventListener('click', () => )
 console.log("FINISHED LOADING");
