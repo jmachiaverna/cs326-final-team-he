@@ -166,7 +166,7 @@ function putChirp(chirpDB, id, chirp) {
 function deleteJSON(database, id) {
     let code = database.findIndex(elem => elem['id'] === id);
     if (code === -1) {
-        return code;
+        return 404;
     } else {
         database.splice(code, 1);
         code = 200;
@@ -195,7 +195,6 @@ function deleteChirp(chirpDB, id) {
 }
 
 
-
 /**
  * Server calls
  */
@@ -204,8 +203,13 @@ const express = require('express');
 const app = express();
 const port = 3000;
 
+/**
+ * dummy databases
+ */
+const profiledb = [];
+const chirpdb = [];
+
 app.use(express.json()); // Middleware allows us to use JSON
-app.use(express.static(path.join(__dirname, '/public')));
 
 // request is incoming data, response is outgoing data
 
@@ -224,14 +228,51 @@ app.post('/', (req, res) => { // For CREATE
 });
 
 app.put('/', (req, res) => { // For UPDATE
-    res.send("Got a PUT request at /user");
+    res.send("Got a PUT request at /");
 });
 
-app.delete('/', (req, res) => { // For DELETE
-    res.send("Got a DELETE request at /user");
+//PUT request for user (editing a profile) SHOULD NOT BE USED FOR CREATING A USER
+app.put('/user', (req, res) => {
+    const { id, profile } = req.params;
+    const status = putProfile(profiledb, id, profile);
+    res.status(status);
+    if (status === 200) {
+        res.send('Successfully updated profile with id: ' + id);
+    } else if (status === 202) {
+        res.send('Created a new profile with id: ' + id);
+    } else {
+        res.status(404).send('ERROR with request');
+    }
+});
+
+//PUT request for chirp (editing a post)
+app.put('/chirp', (req, res) => {
+    const { id, chirp } = req.params;
+    const status = putChirp(chirpdb, id, chirp);
+    res.status(status);
+    if (status === 200) {
+        res.send('Successfully updated chirp with id: ' + id);
+    } else if (status === 202) {
+        res.send('Created a new chirp with id: ' + id);
+    } else {
+        res.status(404).send('ERROR with request');
+    }
+});
+
+//DELETE request for user (delete profile)
+app.delete('/user', (req, res) => { // For DELETE
+    const { id } = req.params;
+    const status = deleteProfile(profiledb, id);
+    res.status(status).send("Got a DELETE request at /user");
+});
+
+//DELETE request for chirp (delete post)
+app.delete('/chirp', (req, res) => { // For DELETE
+    const { id } = req.params;
+    const status = deleteChirp(chirpdb, id);
+    res.status(status).send("Got a DELETE request at /chirp");
 });
 
 app.listen(port, () => {
     console.log(`Server listening on port ${port}`);
 });
-
