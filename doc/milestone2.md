@@ -47,7 +47,8 @@ To delete, either deleteProfile or deleteChirp will be called depending on what 
 It will then look for the id in the desired databased and then delete that object. A common use case would be when a user needs to delete a chirp. 
 
 ## Division of Labor 
-Joseph Machiaverna: Coded the CREATE endpoint for the API. Also wrote the create, update, and delete descriptions for the description of the API.
+Joseph Machiaverna: Coded the CREATE endpoint for the API. Also wrote the create, update, and delete descriptions for the description of the 
+API.
 Stanley Araki: Worked on initial milestone2.md setup, READ API, serving files with Express.js and HTML updates on the client side with data returned 
 from server side endpoints.
 
