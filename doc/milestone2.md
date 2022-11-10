@@ -52,6 +52,7 @@ API.
 
 Stanley Araki: Worked on initial milestone2.md setup, READ API, serving files with Express.js and HTML updates on the client side with data returned from server side endpoints for READ API.
 
+Nick Chafy: Implemented PUT and DELETE server endpoint handling and API, worked on integrating project with heroku with express.js and dependency management. Implemented add friend functionality with HTML updates. 
 ## Screenshots
 
 ![example image](img/read_view.png)
