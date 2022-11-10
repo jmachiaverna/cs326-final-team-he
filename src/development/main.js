@@ -1,26 +1,14 @@
-/**
- * Code for the main feed updates
- */
-
-// class feed {
-//     constructor() {
-//         // Set default values
-//         // Want user info here
-
-//         const response = await fetch("http://localhost:3000/profile");
-        
-//     }
-
-// }
-
+// const fetch = (...args) =>
+// 	import('node-fetch').then(({default: fetch}) => fetch(...args));
 
 // /**
 //  * Gets profile asyncorhonously for a given user (no params for now)
 //  * @return {JSON} Returns Profile JSON
 //  */
-// async function get_profile() {
+//  async function get_profile() {
 //     const response = await fetch("http://localhost:3000/profile");
-//     if (response.ok()) {
+
+//     if (response.ok) {
 //         const profileJson = await response.json();
 //         return profileJson;
 //     }
@@ -46,5 +34,7 @@
 
 // // On load call
 
-// const profileJson = await get_profile();
+// const profileJson = get_profile();
 // set_profile(profileJson);
+
+console.log("LOADING");
