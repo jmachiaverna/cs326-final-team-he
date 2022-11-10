@@ -49,6 +49,7 @@ It will then look for the id in the desired databased and then delete that objec
 ## Division of Labor 
 Joseph Machiaverna: Coded the CREATE endpoint for the API. Also wrote the create, update, and delete descriptions for the description of the 
 API.
+
 Stanley Araki: Worked on initial milestone2.md setup, READ API, serving files with Express.js and HTML updates on the client side with data returned 
 from server side endpoints.
 
