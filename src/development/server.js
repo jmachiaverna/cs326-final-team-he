@@ -209,6 +209,7 @@ const profiledb = [];
 const chirpdb = [];
 
 app.use(express.json()); // Middleware allows us to use JSON
+app.use(express.static(path.join(__dirname, "/public")));
 
 // request is incoming data, response is outgoing data
 
