@@ -20,8 +20,8 @@
   },
   "homepage": "https://github.com/cs326-final-team-he/cs326-final-team-he#readme",
   "dependencies": {
+    "ejs": "^3.1.8",
     "express": "^4.18.2"
   },
-  "type": "commonjs",
-  "devDependencies": {}
+  "type": "commonjs"
 }

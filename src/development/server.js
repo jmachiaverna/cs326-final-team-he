@@ -67,6 +67,8 @@ function createChirp(chirpDB, id, user_name, shared_song_name, shared_song){
  */
 function getProfile() {
     return {
+        user_name: faker.faker.name.fullName(),
+        user_id: faker.faker.datatype.uuid(),
         spotify_account: faker.faker.internet.domainName(),
         playlist: faker.faker.internet.domainName(),
         favorite_song: faker.faker.music.songName(),
@@ -203,7 +205,7 @@ const app = express();
 const port = 3000;
 
 app.use(express.json()); // Middleware allows us to use JSON
-app.use(express.static(path.join(__dirname, '/dev_view')));
+app.use(express.static(path.join(__dirname, '/public')));
 
 // request is incoming data, response is outgoing data
 
