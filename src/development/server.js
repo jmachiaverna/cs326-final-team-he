@@ -203,13 +203,9 @@ const app = express();
 const port = 3000;
 
 app.use(express.json()); // Middleware allows us to use JSON
+app.use(express.static(path.join(__dirname, '/dev_view')));
 
 // request is incoming data, response is outgoing data
-
-app.get('/', (req, res) => { // For READ
-    // res.send("Got a GET request at /user");
-    res.sendFile(path.join(__dirname, '/index.html'));
-});
 
 app.get('/profile', (req, res) => { // Request to get profile
     const result = getProfile();
