@@ -50,6 +50,9 @@ It will then look for the id in the desired databased and then delete that objec
 Joseph Machiaverna: Coded the CREATE endpoint for the API. Also wrote the create, update, and delete descriptions for the description of the 
 API.
 
-Stanley Araki: Worked on initial milestone2.md setup, READ API, serving files with Express.js and HTML updates on the client side with data returned 
-from server side endpoints.
+Stanley Araki: Worked on initial milestone2.md setup, READ API, serving files with Express.js and HTML updates on the client side with data returned from server side endpoints for READ API.
 
+## Screenshots
+
+![example image](img/read_view.png)
+This is the update on the main view when the page is first loaded. As we can see, the fields for the profiles are updated upon load of the view. In the future we expect this data to be unique to the user after authentication, and for it to be saved in some sort of database. We can also see one of the user's friends on the right widgets section for "Friends & Favorite Songs". This field is updated with the user's friends' name and favorite song displayed when the view is loaded in, using the READ /profile endpoint. Finally we see the user's feed be updated with the read in 'chirps'(shared music with captions) through the READ /chirp endpoint. 

@@ -77,11 +77,10 @@ function getProfile() {
         friends: [
             {
                 user_name: faker.faker.name.fullName(),
-                details: {
-                    favorite_song: faker.faker.music.songName(),
-                    recent_shared: {
-                        shared_song: faker.faker.music.songName()
-                    }
+                user_id: faker.faker.datatype.uuid(),
+                favorite_song: faker.faker.music.songName(),
+                recent_shared: {
+                    shared_song: faker.faker.music.songName()
                 }
             }
         ],
@@ -219,7 +218,7 @@ app.get('/profile', (req, res) => { // Request to get profile
 });
 
 app.get('/chirp', (req, res) => {
-    const result = getProfile();
+    const result = getChirp();
     res.send(result);
 });
 
