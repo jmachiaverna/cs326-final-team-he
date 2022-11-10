@@ -48,6 +48,6 @@ It will then look for the id in the desired databased and then delete that objec
 
 ## Division of Labor 
 Joseph Machiaverna: Coded the create endpoint for the API. Also wrote the create, update, and delete descriptions for the description of the API.
-Stanely Araki: 
+Stanley Araki: 
 Nick Chafy:
 
