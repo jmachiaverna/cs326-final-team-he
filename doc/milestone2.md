@@ -36,5 +36,16 @@ Example of user information retreived:
 }
 
 ## Update
+The Update endpoint provides the ability to update an existing entry in the server. The JSON objects to update include either the profile or the chirp object. 
+To update, either putProfile or putChrip will be called depending on what needs to be updated. From there, the putJSON function will be called.
+It will then look for the id in the desired database and then update the JSON object inside of it. If it is not found, it will create a new one. 
+A common use case would be if a user would like to update their favorite song on their profile or they made a typo on their chirp. 
 
 ## Delete
+The Delete endpoint provides the ability to delete an existing entry in the server. The JSON objects to delete include either the profile or the chirp object.
+To delete, either deleteProfile or deleteChirp will be called depending on what needs to be deleted. From there, the deleteJSON function will be called.
+It will then look for the id in the desired databased and then delete that object. A common use case would be when a user needs to delete a chirp. 
+
+## Division of Labor 
+Joseph Machiaverna: Coded the create endpoint for the API. Also wrote the create, update, and delete descriptions for the description of the API.
+
