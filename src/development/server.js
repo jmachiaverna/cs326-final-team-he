@@ -9,50 +9,6 @@ const path = require('path');
 /**
  * CREATE ENDPOINT
  */
-/**
- * Will create and store profile data regarding the user and add it to the database
- * @param {JSON[]} profileDB: database of profiles
- * @param {number} id: id of profile that is being created
- * @param {string} user_name: username for profile that is being created
- * @param {string} favorite_song: favorite song for new profile being created 
- * @param {string} favorite_genre: favorite genre for new profile being created 
- * @param {string} favorite_artist: favorite genre for new profile being created
- * @param {string} spotify_account: link for associated spotify account
- * @param {string} playlist: link to the users's playlist
- * @param {JSON[]} friends: list of friends to be added
- */
-function createProfile(profileDB, id, user_name, favorite_song, favorite_genre, favorite_artist, spotify_account, playlist, friends){
-    const newProfileInfo = {
-        'user_name': user_name,
-        'favorite_song': favorite_song,
-        'favorite_genre': favorite_genre,
-        'favorite_artist': favorite_artist,
-        'spotify_account': spotify_account,
-        'playlist': playlist,
-        'friends': friends 
-    };
-  
-    profileDB.push({'id': id, 'json': newProfileInfo});
-}
-/** 
- * Will create and store a chirp post and add it to the database. Since nobody has seen the post yet, likes and shares will be set to 0. 
- * @param {JSON[]} chirpDB: database of chirps
- * @param {number} id: id of chirp that is being created
- * @param {string} user_name: name of person who posted the chirp
- * @param {string} shared_song_name: name of song to be shared
- * @param {string} shared_song: link of song to be shared
- */
-function createChirp(chirpDB, id, user_name, shared_song_name, shared_song){
-    const newChirpInfo = {
-        'user_name': user_name,
-        'shared_song_name': shared_song_name,
-        'shared_song': shared_song,
-        'like_count': 0,
-        'share_count': 0,
-    };
-    
-    chirpDB.push({'id': id, 'json': newChirpInfo});
-}
 
 
 /**
@@ -210,24 +166,45 @@ if (port == null || port == "") {
 const profiledb = [];
 const chirpdb = [];
 
+int id = 0; 
+
 app.use(express.json()); // Middleware allows us to use JSON
 app.use(express.static(path.join(__dirname, "/public")));
 
 // request is incoming data, response is outgoing data
 
-app.get('/profile', (req, res) => { // Request to get profile
+app.get('/Profile', (req, res) => { // Request to get profile
     const result = getProfile();
     res.send(result);
 });
 
-app.get('/chirp', (req, res) => {
+app.get('/Chirp', (req, res) => {
     const result = getChirp();
     res.send(result);
 });
 
-app.post('/', (req, res) => { // For CREATE
-    res.send("Got a POST request");
+app.post('/createProfile', (req, res) => { // For CREATE PROFILE
+    let body = '';
+    req.on('data', data => body += data);
+    req.on('end', () =>{
+        const post = JSON.parse(body);
+        profiledb.push({id: id, json: post});
+        id = id + 1; 
+    });
+    res.sendSatus(200);
 });
+
+app.post('/createChirp', (req, res) => { // For CREATE CHIRP
+    let body = '';
+    req.on('data', data => body += data);
+    req.on('end', () =>{
+        const post = JSON.parse(body);
+        chirpdb.push({id: id, json: post});
+        id = id + 1;
+    });
+    res.sendSatus(200);
+});
+
 
 app.put('/', (req, res) => { // For UPDATE
     res.send("Got a PUT request at /");
