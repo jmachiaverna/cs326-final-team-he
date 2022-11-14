@@ -16,5 +16,26 @@
   },
   "devDependencies": {
     "@faker-js/faker": "^7.6.0"
-  }
+  },
+  "description": "<!-- ![Alt text](main_view.png?raw=true \"Main Web View\")] -->",
+  "main": "./src/development/server.js",
+  "directories": {
+    "doc": "doc"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/cs326-final-team-he/cs326-final-team-he.git"
+  },
+  "keywords": [
+    "heroku",
+    "server"
+  ],
+  "author": "Nick Chafy, Stanley Araki, Joseph Machiaverna",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/cs326-final-team-he/cs326-final-team-he/issues"
+  }, "engines": {
+    "node": "16.x"
+  },
+  "homepage": "https://github.com/cs326-final-team-he/cs326-final-team-he#readme"
 }
